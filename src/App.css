@@ -1,0 +1,55 @@
+body{
+  background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,62,121,1) 50%, rgba(0,31,255,1) 100%);
+  color: white;
+  font-family: 'Josefin Sans', sans-serif;
+  }
+  
+  .App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center items */
+    align-items: center; /* Horizontally center items */;
+    height: 100vh;
+    font-size: 20px;
+  }
+  .App button{
+    font-size: 20px;
+    border: 0;
+    background-color: #0A5BD0;
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    transition: background-color ease-in-out 0.2s, scale ease-in-out 0.1s, color ease-in-out 0.1s;
+  }
+
+   .App button:hover{
+      background-color: white;
+      color:#0A5BD0;
+    }
+    .App button:active{
+      scale: 1.2;
+    }
+   
+
+  
+
+  
+  .Emoji{
+    background-image: url("./assets/emoji.svg");
+    background-size: cover;
+    height: 300px;
+    width: 300px;
+  }
+  
+  @media (max-width: 768px) {
+    .App {
+      font-size: 10px;
+    }
+    .Emoji{
+      height: 150px;
+      width: 150px;
+    }
+  }
+  
