@@ -8,7 +8,7 @@ function App() {
   const [printData2, setPrintData2] = useState("");
 
   const fetchData = async () =>{
-   const url = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,sexist";
+   const url = "https://official-joke-api.appspot.com/random_joke";
    const options = {
     method: "GET",
    }
@@ -16,7 +16,7 @@ function App() {
     const response = await fetch(url, options)
     const data = await response.json();
     setPrintData(data.setup);
-    setPrintData2(data.delivery);
+    setPrintData2(data.punchline);
    }catch (error){
     console.log(error);
     setError("Something went wrong !")
@@ -34,8 +34,7 @@ function App() {
       <h1>Ninja Joker !</h1>
       <div className="Emoji"></div>
       {error && <p>{error}</p>}
-      {!printData && <p>Loading...</p>}
-      {!printData2 && <p>Loading...</p>}
+      {!printData && !printData2 && <p>Loading...</p>}
       <h1>{printData}</h1>
       <h1>{printData2}</h1>
       <button onClick={fetchData}>Fetch Jokes !</button>
